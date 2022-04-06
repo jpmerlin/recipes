@@ -1,0 +1,14 @@
+{
+  "recipes": {
+    "cnam/openshift-bundle": [
+      "2.1"
+    ]
+  },
+  "branch": "master",
+  "is_contrib": true,
+  "_links": {
+    "repository": "github.com/jpmerlin/recipes",
+    "origin_template": "{package}:{version}@github.com/jpmerlin/recipes:master",
+    "recipe_template": "https://api.github.com/repos/jpmerlin/recipes/contents/{package_dotted}.{version}.json"
+  }
+}

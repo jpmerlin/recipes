@@ -1,6 +1,6 @@
 {
   "manifests": {
-    "cnam/open-shift-bundle": {
+    "cnamts/open-shift-bundle": {
       "manifest": {
         "bundles": {
           "Cnamts\\OpenShiftBundle\\CnamtsOpenShiftBundle": [

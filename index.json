@@ -1,6 +1,6 @@
 {
   "recipes": {
-    "cnamts/openshift-bundle": [
+    "cnamts/open-shift-bundle": [
       "2.1.2"
     ]
   },

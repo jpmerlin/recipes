@@ -8,79 +8,24 @@
           ]
         },
         "copy-from-recipe": {
-          "bin/": "%BIN_DIR%/",
-          "config/": "%CONFIG_DIR%/",
-          "public/": "%PUBLIC_DIR%/"
-        },
-        "files": {
-          "bin/clean_container.sh": {
-            "contents": [
-              "#!/bin/sh",
-              "",
-              "\"$(dirname $0)\"/console cache:clear",
-              ""
-            ],
-            "executable": true
-          },
-          "bin/deploy.sh": {
-            "contents": [
-              "#!/bin/sh",
-              "",
-              "error_exit() {",
-              "  echo \"$1\" 1>&2",
-              "  exit 1",
-              "}",
-              "",
-              "main() {",
-              "  \"$CONSOLE_PATH\"/console cache:clear",
-              "  \"$CONSOLE_PATH\"/console assets:install",
-              "#  echo \">>> DB Migration\"",
-              "#  \"$CONSOLE_PATH\"/console doctrine:migrations:migrate --no-interaction || error_exit \"Erreur de migration doctrine !\"",
-              "#",
-              "#  if [ -n \"${SYMFONY_EXECUTE_TESTS}\" ] && [ \"$SYMFONY_EXECUTE_TESTS\" = \"true\" ]; then",
-              "#    echo \">>> Lancement des tests d'integration Behat\"",
-              "#    php -d memory_limit=-1 \"$CONSOLE_PATH\"/../vendor/behat/behat/bin/behat --format=pretty --no-interaction --strict || error_exit \"Erreur Tests Behat !\"",
-              "#    echo \"…OK !\"",
-              "#  fi",
-              "}",
-              "",
-              "CONSOLE_PATH=$(dirname \"$0\")",
-              "main \"$@\"",
-              "",
-              "exit 0",
-              ""
-            ],
-            "executable": true
-          },
-          "config/packages/open-shift.yaml": {
-            "contents": [
-              "cnamts_open_shift:",
-              "  maintenance: '%env(bool:MAINTENANCE)%'",
-              "  home_page_route: '%env(HOME_PAGE_ROUTE)%'",
-              "  ecs_formatter:",
-              "    service:",
-              "      name: '%env(APP_NAME)%'",
-              ""
-            ],
-            "executable": false
-          },
-          "config/routes/open-shift.yaml": {
-            "contents": [
-              "open_shift:",
-              "  resource: '@CnamtsOpenShiftBundle/Controller/'",
-              "  type: annotation",
-              ""
-            ],
-            "executable": false
-          }
-        },
-        "env": {
-          "MAINTENANCE": false,
-          "HOME_PAGE_ROUTE": "",
-          "APP_NAME": "skeleton-api"
+          "config/": "%CONFIG_DIR%"
         }
       },
-      "ref": "41f89d08d7d9a2ee7742f0374f77a5e437d0bf74"
+      "files": {
+        "config/packages/open-shift.yaml": {
+          "contents": [
+            "cnamts_open_shift:",
+            "  maintenance: '%env(bool:MAINTENANCE)%'",
+            "  home_page_route: '%env(HOME_PAGE_ROUTE)%'",
+            "  ecs_formatter:",
+            "    service:",
+            "      name: '%env(APP_NAME)%'",
+            ""
+          ],
+          "executable": false
+        }
+      },
+      "ref": "52f89d08d7d9a2ee7742f0374f77a5e437d0bf74"
     }
   }
 }

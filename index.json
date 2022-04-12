@@ -1,7 +1,7 @@
 {
   "recipes": {
     "cnamts/open-shift-bundle": [
-      "2.1.2"
+      "2.1"
     ]
   },
   "branch": "master",
